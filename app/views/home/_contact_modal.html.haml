@@ -1,0 +1,9 @@
+.modal.fade#contactModal{:style => "display:none;"}
+  .modal-dialog
+    .modal-content
+      %button.close{"data-dismiss"=>"modal", "aria-hidden" => "true", :style =>"padding-right: 6px; padding-top: 3px;"}
+        ="X"
+      .form-popero.centered-container{style: 'width: 80%'}
+        .form-header
+          = render partial: "home/contact"
+          %br

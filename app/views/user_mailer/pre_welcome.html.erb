@@ -1,0 +1,15 @@
+<%= render :partial => 'user_mailer/header', :locals => {} %> 
+
+	Hi there, <%= @user.email %>
+
+  
+	<br>
+  	Thanks for registering to our site. <br />
+
+<br><br>
+
+Cheers<br>
+<!-- NAME -->
+<%= @url %>
+
+<%= render :partial => 'user_mailer/footer', :locals => {} %> 

@@ -1,0 +1,114 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  activerecord:
+    attributes:
+      user:
+        first_name: "First Name"
+        last_name: "Last Name"
+        email: "Email"
+        new_password: "New Password"
+        password: "Password"
+        password_confirmation: "Password Confirmation"
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: " field required"
+              taken: " already taken"
+            username:
+              blank: " field required"
+              taken: " already taken"
+            password:
+              blank: " field required"
+              too_short: " it must be at least 4 characters long"
+              too_long: " too long"
+              confirmation: " doesn't match"
+  placeholders:
+    user:
+      first_name: "First Name"
+      last_name: "Last Name"
+      email: "Email"
+      password: "Password"
+      password_confirmation: "Confirm Password"
+      password_current: "Current Password"
+      password_new: "New Password"
+  modules:
+    landing:
+      welcome: "Welcome to"
+    sign_up:
+      enter_email: "Enter your email and we'll contact you when we are ready:"
+      subscribe: "Subscribe"
+    register:
+      title: "Register"
+      btn: "Register"
+      btn_update: "Update"
+      btn_pass: "Change Password"
+      footer: "Already registered? Log in here"
+    login:
+      title: "Log in"
+      need_login: "Log in to continue"
+      forgot_pass: "Forgot your password?"
+      footer: "Not a member? Register here"
+    forgot_pass:
+      title: "Recover your password"
+      email: "Enter your email"
+      btn: "Send recovery email"
+      enter_new: "Enter new password"
+      btn_change: "Change password"
+    edit:
+      title: "Editing user"
+      change_pass: "Change your password"
+  notice:
+    pre_user:
+      create: "Thank you for subscribing. You'll receive an email from us soon!"
+      error: "This email account is already registered!"
+    user:
+      create: "An activation link  for your account was sent to your email"
+      update: "The user was successfully updated"
+      activate: "Your account has been ativated"
+      unsubscribe: "You will no longer receive this emails"
+    sessions:
+      user_not_found: "This user was not found!"
+      recovery: "A recovery email has been sent!"
+      invalid_link: "This link is invalid or was already used!"
+      pass_changed: "The password has been changed"
+      already_in: "Already logged in!"
+      logged_in: "You are now logged in!"
+      activation: "Check your email and activate your account"
+      invalid_pass: "Invalid email or password"
+  common:
+    app_name: "App Name"
+    app_desc: "App Description"
+    app_url: "http://brainshots.cl"
+    toggle_navigation: "Toggle navigation"
+    nav:
+      register: "Register"
+      login: "Log in"
+      admin: "Admin"
+      logout: "Log out"
+    forms:
+      show_errors: "Errors: "
+      save: "Save"
+    admin:
+      dashboard: "Admin Dashboard"
+      users: "Users"
+      go_back: "Go Back"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

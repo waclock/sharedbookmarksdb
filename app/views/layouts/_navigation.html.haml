@@ -1,0 +1,24 @@
+%ul.nav.navbar-nav.pull-right
+	- unless current_user&&(can? :manage, :admin)&&['admins','users'].include?(controller.controller_name)
+		- if current_user
+			- if (can? :manage, :admin)
+				%li 
+					= link_to t('common.nav.admin'), admins_dashboard_path
+				%li
+					%span ||
+			%li 
+				= link_to current_user.to_s, user_path(current_user)
+			%li 
+				= link_to t('common.nav.logout'), log_out_path
+		- else
+			%li 
+				= link_to t('common.nav.register'), sign_up_path, :class => 'needs-login'
+			%li 
+				= link_to t('common.nav.login'), log_in_path, :class => 'needs-login'
+	- else
+		%li{:class => ['dashboard'].include?(controller.action_name) ? 'active' : ''}
+			= link_to t('common.admin.dashboard'), admins_dashboard_path
+		%li{:class => 'index'==controller.action_name&&'users'==controller.controller_name ? 'active' : ''}
+			= link_to t('common.admin.users'), users_path
+		%li 
+			= link_to t('common.admin.go_back'), home_path

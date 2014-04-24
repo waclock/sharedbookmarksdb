@@ -1,0 +1,11 @@
+
+
+<br>
+</div>
+
+<% if @unsubscribe_token %>
+	You can always <a href="http://localhost:3000/unsubscribe/<%= @unsubscribe_token+(@unsubscribe_from ? '/'+@unsubscribe_from : '') %>">Unsubscribe</a> from our emails.
+<% end -%>
+
+
+</div>

@@ -1,0 +1,19 @@
+.col-lg-12
+	%h3= t('modules.login.title')
+= form_tag sessions_path, :class => "form form-horizontal" do
+	.field
+		.icon
+			%i.fa.fa-envelope
+		.col-lg-12
+			= text_field_tag :email, params[:email], :placeholder => t('placeholders.user.email'), :class => 'form-control'
+	.field
+		.icon
+			%i.fa.fa-key
+		.col-lg-12
+			= password_field_tag :password, nil, :placeholder => t('placeholders.user.password'), :class => 'form-control'
+	.field
+		.icon
+		.col-lg-12
+			=submit_tag t('modules.login.title'), :class => 'btn btn-default'
+
+

@@ -1,0 +1,17 @@
+#loginModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+	.modal-dialog
+		.modal-content
+			.modal-header
+				%button.close.close-modal{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+				%h4.modal-title= t('modules.login.need_login')
+			.modal-body
+				.register-box
+					%h3= t('modules.register.title')
+					=render partial: "users/form", :locals => {:@no_errors => true}
+				.login-box.centered-container
+					=render partial: "sessions/new", :locals => {:@no_errors => true}
+				.row
+					&nbsp;
+/ .modal-footer
+/   %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
+/   %button.btn.btn-primary{:type => "button"} t('common.forms.save')

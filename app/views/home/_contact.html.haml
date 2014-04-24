@@ -1,0 +1,11 @@
+%h2.center.blue Envíanos un correo
+= form_for PreUser.new, :url => send_contact_path,:html =>{ :class => "form-body form-col-2" } do |f|
+	.field-container
+		= text_field_tag :first_name,@first_name, :class => 'form-control', :placeholder => 'Tu Nombre'
+		%br
+		= text_field_tag :email,@email, :class => 'form-control', :placeholder => 'Tu correo (para responderte)'
+		%br
+		= text_area_tag :message,@message, :class => 'form-control', :placeholder => 'Escribe aquí tu sugerencia, feedback o felicitación :)', :rows => 5
+		%br
+		.actions
+			= submit_tag 'Enviar Correo', :class => 'btn btn-default'

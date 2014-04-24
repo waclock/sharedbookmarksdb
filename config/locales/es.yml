@@ -1,0 +1,114 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+es:
+  activerecord:
+    attributes:
+      user:
+        first_name: "Nombre"
+        last_name: "Apellido"
+        email: "Email"
+        new_password: "Nueva Contraseña"
+        password: "Contraseña"
+        password_confirmation: "Confirmación de contraseña"
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: " campo requerido"
+              taken: " ya existe"
+            username:
+              blank: " campo requerido"
+              taken: " ya existe"
+            password:
+              blank: " campo requerido"
+              too_short: " debe tener al menos 4 caracteres"
+              too_long: " muy larga"
+              confirmation: " no coincide"
+  placeholders:
+    user:
+      first_name: "Nombre"
+      last_name: "Apellido"
+      email: "Email"
+      password: "Contraseña"
+      password_confirmation: "Confirmar contraseña"
+      password_current: "Contraseña actual"
+      password_new: "Nueva contraseña"
+  modules:
+    landing:
+      welcome: "Bienvenido a"
+    sign_up:
+      enter_email: "Ingresa tu correo y te notificaremos cuando estemos listos:"
+      subscribe: "Subscríbete"
+    register:
+      title: "Regístrate"
+      btn: "Regístrate"
+      btn_update: "Actualizar"
+      btn_pass: "Cambiar contraseña"
+      footer: "¿Ya tienes cuenta? Ingresa aquí"
+    login:
+      title: "Ingresa"
+      need_login: "Ingresa para continuar"
+      forgot_pass: "¿Olvidaste tu contraseña?"
+      footer: "¿No tienes cuenta? Regístrate aquí"
+    forgot_pass:
+      title: "Recupera tu contraseña"
+      email: "Ingresa tu correo"
+      btn: "Enviar correo de recuperación"
+      enter_new: "Cambia tu contraseña"
+      btn_change: "Cambiar contraseña"
+    edit:
+      title: "Editando usuario"
+      change_pass: "Cambio de contraseña"
+  notice:
+    pre_user:
+      create: "Gracias por subscribirte. ¡Recibirás pronto un correo de nuestra parte!"
+      error: "¡Este correo ya está registrado!"
+    user:
+      create: "Se ha enviado un link de activación a tu correo"
+      update: "El usuario se ha actualizado"
+      activate: "Tu cuenta ha sido activada"
+      unsubscribe: "Ya no recibirás estos correos"
+    sessions:
+      user_not_found: "El usuario no fue encontrado"
+      recovery: "Se te ha enviado un correo de recuperación"
+      invalid_link: "Este link es inválido o ya fue usado!"
+      pass_changed: "La contraseña ha sido cambiada"
+      already_in: "¡Ya has ingresado!"
+      logged_in: "¡Ahora estás ingresado!"
+      activation: "Revisa tu correo y activa tu cuenta"
+      invalid_pass: "Contraseña o correo incorrectos"
+  common:
+    app_name: "Nombre App"
+    app_desc: "Descripción App"
+    app_url: "http://brainshots.cl"
+    toggle_navigation: "Invertir navegación"
+    nav:
+      register: "Regístrate"
+      login: "Ingresa"
+      admin: "Admin"
+      logout: "Salir"
+    forms:
+      show_errors: "Errores: "
+      save: "Save"
+    admin:
+      dashboard: "Inicio Admin"
+      users: "Usuarios"
+      go_back: "Volver"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

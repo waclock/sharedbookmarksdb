@@ -1,0 +1,106 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "coloresw8";
+@import "functions";
+
+// General defaults
+body{
+	font-family: Lato, Arial, Helvetica;
+}
+a, a:visited{
+  color: #777;
+  &:hover{
+  	color: #333;
+  }
+}
+
+//Separate header from lateral borders
+header{
+	padding-left: 55px;
+	padding-right: 55px;
+}
+// NavBar Separator
+.nav > li > span{
+	display: block;
+	padding: 10px 15px;
+	line-height: 25px;
+}
+// Active NavBar
+.nav > li.active > a{
+	text-decoration: none;
+	background-color: #eeeeee;
+}
+
+// SOCIAL_FOOTER
+.footer_social{
+	.copy { 
+		width:400px; 
+		float:left; 
+		margin:34px 0 0 ; 
+		margin-left: 50px; 
+		font-size:14px; 
+		color:#7b8285; 
+	}
+	.copy p strong { 
+		font-weight:700; 
+		color:#3e4446; 
+	}
+	.social { 
+		float:right; 
+		margin:22px 0 0;  
+		margin-right: 50px;  
+	}
+	.social{ 
+		ul{
+			list-style: none;
+			li{
+				float:left; 
+				margin:0 0 0 9px; 
+			}
+			.google a {   
+				background:url(/assets/google.png) no-repeat; 
+				width:37px; 
+				height:37px; 
+				display:block; 
+				opacity:0.4;   
+				-ms-filter: "progid:DXImageTrans form.Microsoft.Alpha(Opacity=40)"; 
+				&:hover {  
+					opacity:1;  
+					-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";  
+				}
+			}
+			.facebook a { 
+				background:url(/assets/facebook.png) no-repeat; 
+				width:37px; 
+				height:37px; 
+				display:block; 
+				opacity:0.4;  
+				-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";  
+				&:hover {  
+					opacity:1; 
+					-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; 
+				}
+			}
+			.twitter a { 
+				background:url(/assets/twitter.png) no-repeat; 
+				width:37px; 
+				height:37px; 
+				display:block; 
+				opacity:0.4;  
+				-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";  
+				&:hover {  
+					opacity:1; 
+					-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; 
+				}
+			}
+		}
+	}
+	// Cambia cuando la pantalla es pequeña
+	@media(max-width:480px) { 
+		.copyright { float:none; margin:0 auto; width:300px; text-align:center; padding:10px 0; }
+		.social { float:none; margin:0 auto;  width:150px; padding:0 0 5px; }
+	}
+}
+// END SOCIAL_FOOTER

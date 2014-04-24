@@ -1,0 +1,17 @@
+<%= render :partial => 'user_mailer/header', :locals => {} %> 
+
+	Hello, <%= @user.first_name %>
+
+  
+	<br>
+	You can change your password by clicking the following link: <br>
+	<a href="<%= @url %>"><%= @url %></a>
+
+
+<br><br>
+
+Cheers<br>
+<!-- NAME -->
+<%= @url %>
+
+<%= render :partial => 'user_mailer/footer', :locals => {} %> 

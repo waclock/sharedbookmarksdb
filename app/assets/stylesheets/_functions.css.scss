@@ -1,0 +1,28 @@
+
+/* Functaions */
+
+//Put '...' at the end of text if its too long
+//Usage: @include cutText(300px);
+@mixin cutText($width){
+	width : $width;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+//Round the corners of a div. You can also especify which border(Ex: 'top'+'right')
+//Usage: @include radius(10px);
+//Usage: @include radius(10px, 'top', 'left');
+@mixin radius( $radius, $vert:"none", $horz: "none"){
+	@if $vert=="none" or $horz== "none"  {
+		-webkit-border-radius: $radius;
+	       -moz-border-radius: $radius;
+	            border-radius: $radius;
+  	} @else{
+		border-#{$vert}-#{$horz}-radius: $radius;
+		-moz-border-radius-#{$vert}#{$horz}: $radius;
+		-webkit-border-#{$vert}-#{$horz}-radius: $radius;
+	}
+}
+/**/

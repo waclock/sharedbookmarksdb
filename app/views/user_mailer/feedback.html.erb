@@ -1,0 +1,21 @@
+<%= render :partial => 'user_mailer/header', :locals => {} %> 
+
+
+	Your email has been sent to us, <%= @user %>
+  
+	<br>
+	<% if @message %>
+		<%= @message.html_safe %>
+	<% else %>
+		Thanks for your feedback. <br />
+		Your request will be answered soon.
+	<% end -%>
+
+
+<br><br>
+
+Cheers<br>
+<!-- NAME -->
+<%= @url %>
+
+<%= render :partial => 'user_mailer/footer', :locals => {} %> 

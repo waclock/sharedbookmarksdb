@@ -1,0 +1,15 @@
+.register_box
+	%h4.response{style: 'display: none'}
+		&nbsp;
+	= form_for @pre_user||PreUser.new, :html => {:class => "form form-horizontal"} do |f|
+		=t('modules.sign_up.enter_email')
+		.field.col-lg-12
+			.input-group
+				= f.text_field :email, :placeholder => t('placeholders.user.email'), :class => 'form-control'
+				%span.input-group-btn
+					%button.btn.btn-info#register_btn{style: 'margin-left: -55px;'}
+						%span.hidden-md.hidden-lg
+							%i.fa.fa-envelope
+						%span.visible-md.visible-lg
+							%i.fa.fa-envelope
+							=t('modules.sign_up.subscribe')

@@ -1,0 +1,19 @@
+.centered-container
+	.col-lg-12
+		%h3= t('modules.forgot_pass.title')
+		= form_tag send_pass_recovery_path, :class => "form form-horizontal" do
+			.field
+				.icon
+					%i.fa.fa-envelope
+				.col-lg-12
+					= text_field_tag :email, params[:email], :placeholder => t('modules.forgot_pass.email'), :class => 'form-control'
+			.field
+				.icon
+				.col-lg-12
+					=submit_tag t('modules.forgot_pass.btn'), :class => 'btn btn-default'
+
+	.field
+		= link_to log_in_path, :class => 'btn' do
+			= t('modules.register.footer')
+		= link_to sign_up_path, :class => 'btn' do
+			= t('modules.login.footer')

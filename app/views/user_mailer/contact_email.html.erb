@@ -1,0 +1,27 @@
+<%= render :partial => 'user_mailer/header', :locals => {} %> 
+
+  	Hi there, administrators.
+
+  
+  	<br>
+  	A feedback email was sent to you:
+  	<br>
+
+  	<br />
+	<b>Sent by:</b> <%= @name %>
+	<br><br />
+	<b>Contact email:</b> <%= @email %>
+	<br /><br />
+	<b>Subject:</b> <%= @subject %>
+	<br /><br />
+	<b>Content:</b> <br />
+	<%= @content %>
+
+
+<br><br>
+
+Cheers<br>
+<!-- NAME -->
+<%= @url %>
+
+<%= render :partial => 'user_mailer/footer', :locals => {} %> 

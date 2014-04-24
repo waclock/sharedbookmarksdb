@@ -1,0 +1,8 @@
+.centered-container
+	.col-lg-12
+		%h3= t('modules.register.title')
+	= render 'form', :locals => {:@no_errors => @no_errors}
+
+	.field
+		= link_to log_in_path, :class => 'btn' do
+			= t('modules.register.footer')

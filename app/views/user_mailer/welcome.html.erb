@@ -1,0 +1,18 @@
+<%= render :partial => 'user_mailer/header', :locals => {} %> 
+
+	Hi there, <%= @user.first_name || @user.email %>
+
+  
+	<br>
+  	Thanks for registering to our site. <br />
+  	You can activate your account by clicking the following link: <br>
+  	<a href="<%= @url %>"><%= @url %></a>
+
+
+<br><br>
+
+Cheers<br>
+<!-- NAME -->
+<%= @url %>
+
+<%= render :partial => 'user_mailer/footer', :locals => {} %> 

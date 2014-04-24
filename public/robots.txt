@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /404.html
+Disallow: /422.html
+Disallow: /500.html
+<!-- Sitemap: /sitemap.xml -->

@@ -1,0 +1,65 @@
+!!!
+%html
+  %head
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
+      %title= content_for?(:title) ? yield(:title) : t('common.app_name')
+      %meta{:content => content_for?(:description) ? yield(:description) : t('common.app_desc'), :name => "description"}
+      = stylesheet_link_tag "application", :media => "all" #, "data-turbolinks-track" => true
+      = javascript_include_tag "application" #, "data-turbolinks-track" => true
+      = csrf_meta_tags
+      = yield(:head)
+      -# Google Analytics
+        :javascript
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-XXXXXX-X', 'dominio.cl');
+          ga('send', 'pageview');
+
+      -# Metatags para Facebook y Twitter
+        %link{ :rel => "image_src",  :href => "/assets/logocuadrado.png" }
+        %meta{ :property=>"og:image" , :content=>"/assets/logocuadrado.png" }
+        %meta{ :property=>"og:type" , :content=>"company" }
+        %meta{ :property=>"og:site_name" , :content=> t('common.app_name') }
+        %meta{ :property=>"og:url" , :content=> t('common.app_url') }
+        %meta{ :property=>"og:description",  :content=> t('common.app_desc') }
+      -# Keywords para google y metatag de verificación de ownership
+        %meta{  :name=>"keywords", :content=>"brainshots,brainshots.cl,ingenieria,tecnología,emprendimiento,chile" }
+        %meta{ :name=>"google-site-verification", :content=>"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" }
+
+  %body{:class => "#{controller_name} #{action_name}"}
+    -unless @hide_header
+      %header{:role => "banner"}
+        .navbar-header
+          %button.navbar-toggle.fa.fa-bars{"data-target" => ".bs-navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+            %span.sr-only= t('common.toggle_navigation')
+          %a.navbar-brand{:href => home_path}= t('common.app_name')
+        %nav.collapse.navbar-collapse.bs-navbar-collapse{:role => "navigation"}
+          = render 'layouts/navigation'
+
+    .content
+      .row
+        .span12
+          = render 'layouts/messages'
+          -unless current_user
+            = render partial: "sessions/login"
+          = yield
+
+    %footer
+      -##SOCIAL_FOOTER: Footer with social buttons and copyright(little responsive) **SOCIALFOOTER**
+      -# .footer_social
+        .copy
+          %p
+            %strong=t('common.app_name')
+            © copyright #{Time.now.year}. All rights reserved
+        .social
+          %ul
+            %li.google
+              %a{href: '#'}
+            %li.facebook
+              %a{href: '#'}
+            %li.twitter
+              %a{href: '#'}
+

@@ -1,0 +1,8 @@
+.centered-container
+	=render partial: "sessions/new"
+
+	.field
+		= link_to recover_pass_path, :class => 'btn' do
+			= t('modules.login.forgot_pass')
+		= link_to sign_up_path, :class => 'btn' do
+			= t('modules.login.footer')
