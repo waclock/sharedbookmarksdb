@@ -23,7 +23,9 @@ class User < ActiveRecord::Base
                      },
                      :path => ":attachment/:id/:style/:basename.:extension"
 
-  
+  def to_json(scope = '')
+    super(:only => [:id, :email], :methods => [:name, :access_token])
+  end
   def to_s
     r = (self.first_name ? self.first_name.to_s+' ' : '')+self.last_name.to_s
     return r!='' ? r : self.email
