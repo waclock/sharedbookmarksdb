@@ -40,7 +40,8 @@ module Api
         #     end
         #   end
         # end
-        respond_with @user ? User.find(@user.id).access_token : User.find_by_email(params[:id]).access_token
+        token=@user ? User.find(@user.id).access_token : User.find_by_email(params[:id]).access_token
+        respond_with {"access_token": token}
         # respond_with true
       end
 
