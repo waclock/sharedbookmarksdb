@@ -22,8 +22,8 @@ class GroupsController < ApplicationController
   # POST /groups
   def create
     @group = Group.new(group_params)
-
     if @group.save
+      UserGroup.create(user_id: @group.user_id, group_id: @group.id)
       redirect_to @group, notice: 'Group was successfully created.'
     else
       render action: 'new'
@@ -53,6 +53,6 @@ class GroupsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def group_params
-      params.require(:group).permit(:name, :owner_id)
+      params.require(:group).permit(:name, :user_id)
     end
 end

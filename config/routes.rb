@@ -5,6 +5,7 @@ DefaultInit::Application.routes.draw do
     scope module: :v1, constraints: ApiConstraints.new(version: 1, default: :true) do
       resources :users
       get "/log_in" => "users#show"
+      get "/bookmarks" => "users#bookmarks"
       post "/log_in" => "users#show"
     end
   end

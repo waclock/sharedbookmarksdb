@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
 
   has_many :tokens
   has_many :user_groups
+  has_many :bookmarks
+  has_many :groups, through: :user_groups
   before_save :encrypt_password
   has_one :api_key  
   validates_confirmation_of :password, :on => :create
@@ -55,7 +57,9 @@ class User < ActiveRecord::Base
   def valid_password?(password)
     self.password_hash == BCrypt::Engine.hash_secret(password, self.password_salt)
   end
-
+  def get_bookmarks
+    return self.groups.map{|g| g.folders.map{|f| f.bookmarks}}
+  end
   def encrypt_password
    if password.present?
       self.password_salt = BCrypt::Engine.generate_salt

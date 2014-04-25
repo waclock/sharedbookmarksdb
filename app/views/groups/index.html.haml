@@ -11,7 +11,7 @@
   - @groups.each do |group|
     %tr
       %td= group.name
-      %td= group.owner_id
+      %td= group.owner
       %td= link_to 'Show', group
       %td= link_to 'Edit', edit_group_path(group)
       %td= link_to 'Destroy', group, :method => :delete, :data => { :confirm => 'Are you sure?' }
