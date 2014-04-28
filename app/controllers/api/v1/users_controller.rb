@@ -24,9 +24,7 @@ module Api
       end
         # respond_with @user.get_bookmarks.map{|b| JSON.parse(b.to_json)}
       def bookmarks
-        
         @group=Group.all
-        respond_with @group
       end
       def show
         respond_with @user ? User.find(@user.id) : User.find_by_email(params[:id])
