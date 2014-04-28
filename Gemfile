@@ -28,7 +28,7 @@ gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails', #librería de css y
                               :git => 'https://github.com/anjlab/bootstrap-rails.git',
                               :branch => '3.0.0'
 gem 'jquery-rails' #jquery en los assets de rails
-
+gem 'jbuilder'
 #Herramientas de Rails
 gem "thin" #servidor bueno para consultas ajax y buena combinacion con unicorn para multithread
 gem "bcrypt-ruby", '~> 3.1.2', :require => "bcrypt"	#para encriptar contraseñas y tokes

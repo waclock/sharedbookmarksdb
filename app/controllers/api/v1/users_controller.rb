@@ -22,9 +22,11 @@ module Api
         return render nothing: true unless @user.admin
         respond_with User.all.map{|u| JSON.parse(u.to_json) }
       end
+        # respond_with @user.get_bookmarks.map{|b| JSON.parse(b.to_json)}
       def bookmarks
         
-        respond_with @user.get_bookmarks.map{|b| JSON.parse(b.to_json)}
+        @group=Group.all
+        respond_with  @group
       end
       def show
         #the device is created if a mac_address is sent
