@@ -53,6 +53,6 @@ class BookmarksController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def bookmark_params
-      params.require(:bookmark).permit(:link, :folder_id)
+      params.require(:bookmark).permit(:link, :folder_id,:name)
     end
 end
