@@ -5,7 +5,7 @@ module Api
       skip_filter :verify_authenticity_token
       before_filter :restrict_access
       def restrict_access
-        access_token=request.headers["HTTP_ACCESS_TOKEN"]
+        access_token=request.headers["HTTP_ACCESS_TOKEN"]||params[:access_token]
         email=request.headers["HTTP_EMAIL"]
         password=request.headers["HTTP_PASSWORD"]
         # if params[:access_token]!=nil
