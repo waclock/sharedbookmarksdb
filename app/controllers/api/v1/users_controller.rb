@@ -2,12 +2,12 @@ module Api
   module V1
     class UsersController < ApplicationController
 # curl "http://sharedbookmarks.herokuapp.com/api/log_in?email=user@example.com&password=123456"      
+      skip_filter :verify_authenticity_token
       before_filter :restrict_access
       def restrict_access
         access_token=request.headers["HTTP_ACCESS_TOKEN"]
         email=request.headers["HTTP_EMAIL"]
         password=request.headers["HTTP_PASSWORD"]
-        puts access_token
         # if params[:access_token]!=nil
         if access_token!=nil
           api_key = ApiKey.find_by_access_token(access_token)
@@ -36,7 +36,8 @@ module Api
         respond_with @user ? User.find(@user.id) : User.find_by_email(params[:id])
       end
       def new_group
-        g=user.groups.where(name: params[:name]).first_or_create
+        g=Group.where(name: params[:name],user_id: @user.id).first_or_create
+        respond_with g
       end
 
     end
