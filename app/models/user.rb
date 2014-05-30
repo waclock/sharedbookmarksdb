@@ -54,7 +54,7 @@ class User < ActiveRecord::Base
     end
   end
   def get_all_groups
-    self.groups+Group.where(user_id:self.id)
+    self.groups
   end
   def bookmarks_as_json
     s=self.as_json

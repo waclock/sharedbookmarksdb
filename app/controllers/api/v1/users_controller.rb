@@ -37,6 +37,7 @@ module Api
       end
       def new_group
         g=Group.where(name: params[:name],user_id: @user.id).first_or_create
+        UserGroup.where(user_id: g.user_id, group_id: g.id).first_or_create
         respond_with g
       end
 
