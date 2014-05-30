@@ -53,7 +53,42 @@ class User < ActiveRecord::Base
       nil
     end
   end
-
+  def get_all_groups
+    self.groups+Group.where(user_id:self.id)
+  end
+  def bookmarks_as_json
+    s=self.as_json
+    s["groups"] = []
+    self.get_all_groups.each do |g|
+      current_group = {}
+      s["groups"] << current_group
+      current_group["name"] = g.name
+      current_group["folders"]=[]
+      g.folders.each do |f|
+        current_folder= {}
+        current_group["folders"] << current_folder
+        current_folder["name"] = f.name
+        current_folder["bookmarks"]=[]
+        f.bookmarks.each do |b|
+          current_bookmark={}
+          current_folder["bookmarks"] << current_bookmark
+          current_bookmark["name"] =b.name
+          current_bookmark["link"] = b.link
+        end
+      end
+    end
+    s
+  end
+  def get_stage_as_json
+    s = self.as_json
+    s["updated_at"] = s["updated_at"].to_formatted_s(:db) if s['updated_at']
+    s["created_at"] = s["created_at"].to_formatted_s(:db) if s['created_at']
+    s["start_date"] = s["start_date"].to_formatted_s(:db) if s['start_date']
+    s["end_date"] = s["end_date"].to_formatted_s(:db) if s['end_date']
+    s["expected_start_date"] = s["expected_start_date"].to_formatted_s(:db) if s['expected_start_date']
+    s["expected_end_date"] = s["expected_end_date"].to_formatted_s(:db) if s['expected_end_date']
+    s
+  end  
   def valid_password?(password)
     self.password_hash == BCrypt::Engine.hash_secret(password, self.password_salt)
   end
