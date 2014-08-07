@@ -1,6 +1,6 @@
 class Group < ActiveRecord::Base
-	has_many :folders
-	has_many :bookmarks
+	has_many :folders, dependent: :destroy
+	has_many :bookmarks, dependent: :destroy
 	has_many :user_groups, dependent: :destroy
 	has_many :users, through: :user_groups
 	belongs_to :user
