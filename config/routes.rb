@@ -43,6 +43,7 @@ DefaultInit::Application.routes.draw do
   resources :sessions
   resources :users
 
+  post 'add_user_to_group' => "groups#add_user"
   #PreUsers for subscription when the app is not yet ready
   post "pre_users" => "pre_users#create", :as => "pre_users"
 

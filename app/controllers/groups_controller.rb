@@ -9,6 +9,7 @@ class GroupsController < ApplicationController
   # GET /groups/1
   def show
     @users=@group.users
+    @all_users=User.where.not(id: @users.collect(&:id))
   end
 
   # GET /groups/new
@@ -19,7 +20,14 @@ class GroupsController < ApplicationController
   # GET /groups/1/edit
   def edit
   end
-
+  def add_user
+    user=User.find_by_email(params[:email])
+    if user
+      puts "Creando UserGroup"
+      UserGroup.where(user_id: user.id,group_id: params[:group_id]).first_or_create
+    end
+    render json:{success: true}
+  end
   # POST /groups
   def create
     @group = Group.new(group_params)
