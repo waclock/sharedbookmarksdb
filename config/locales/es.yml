@@ -80,9 +80,9 @@ es:
       activation: "Revisa tu correo y activa tu cuenta"
       invalid_pass: "Contraseña o correo incorrectos"
   common:
-    app_name: "Nombre App"
-    app_desc: "Descripción App"
-    app_url: "http://brainshots.cl"
+    app_name: "SharedBookmarks"
+    app_desc: "Comparte tus bookmarks con tu equipo de trabajo"
+    app_url: "http://sharedbookmarks.herokuapp.com"
     toggle_navigation: "Invertir navegación"
     nav:
       register: "Regístrate"

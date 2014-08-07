@@ -6,7 +6,25 @@
 %p
   %b Owner:
   = @group.user
+%p
+  %b Usuarios: 
+%table.table 
+  %tr
+    %th
+    %th Usuario
+    %th Acciones
+  -@users.each do |u|
+    %tr
+      %td
+      %td=u.to_s
+      %td
+%br
+%br
+.field.form-group
+  .pull-left Agregar usuario:
+  .col-lg-6=text_field_tag :add_user,"",class: "form-control"
 
+%br
 = link_to 'Edit', edit_group_path(@group)
 \|
 = link_to 'Back', groups_path

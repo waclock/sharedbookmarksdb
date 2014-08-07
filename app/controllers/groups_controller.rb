@@ -8,6 +8,7 @@ class GroupsController < ApplicationController
 
   # GET /groups/1
   def show
+    @users=@group.users
   end
 
   # GET /groups/new
