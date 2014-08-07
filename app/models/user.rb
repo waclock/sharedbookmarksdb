@@ -64,16 +64,19 @@ class User < ActiveRecord::Base
       s["groups"] << current_group
       current_group["name"] = g.name
       current_group["folders"]=[]
+      current_group["id"]=g.id
       g.folders.each do |f|
         current_folder= {}
         current_group["folders"] << current_folder
         current_folder["name"] = f.name
         current_folder["bookmarks"]=[]
+        current_folder["id"]=f.id
         f.bookmarks.each do |b|
           current_bookmark={}
           current_folder["bookmarks"] << current_bookmark
           current_bookmark["name"] =b.name
           current_bookmark["link"] = b.link
+          current_bookmark["id"]=b.id
         end
       end
     end

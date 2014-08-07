@@ -8,6 +8,8 @@ DefaultInit::Application.routes.draw do
       get "/bookmarks" => "users#bookmarks"
       post "/log_in" => "users#show"
       post "/new_group" => "users#new_group"
+      post "/new_folder" => "users#new_folder"
+      post "/new_bookmark" => "users#new_bookmark"
     end
   end
 

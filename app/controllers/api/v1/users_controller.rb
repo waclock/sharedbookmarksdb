@@ -41,7 +41,12 @@ module Api
         respond_with g
       end
       def new_folder
-        
+        f=Folder.where(name: params[:name],group_id: params[:group_id]).first_or_create
+        respond_with f
+      end
+      def new_bookmark
+        b=Bookmark.where(name:params[:name],folder_id: params[:folder_id]).first_or_create(link: params[:link])
+        respond_with b
       end
 
     end
