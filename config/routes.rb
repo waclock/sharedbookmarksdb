@@ -10,7 +10,7 @@ DefaultInit::Application.routes.draw do
       post "/new_group" => "users#new_group"
       post "/new_folder" => "users#new_folder"
       post "/new_bookmark" => "users#new_bookmark"
-      post "delete_group" => "users#delete_group"
+      post "/delete_group" => "users#delete_group"
     end
   end
 
