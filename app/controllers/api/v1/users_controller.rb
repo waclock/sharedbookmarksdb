@@ -48,6 +48,15 @@ module Api
         b=Bookmark.where(name:params[:name],folder_id: params[:folder_id]).first_or_create(link: params[:link])
         respond_with b
       end
+      def delete_group
+        g=Group.where(id: params[:id],user_id: @user.id).first
+        if g
+          g.delete
+          return render text:"Success"
+        else
+          return render text:"Ha ocurrido un error borrando el grupo"
+        end
+      end
 
     end
   end
