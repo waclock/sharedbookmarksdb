@@ -52,7 +52,7 @@ module Api
         ug=@user.user_groups.find_by_group_id(params[:id])
         # g=Group.where(id: params[:id],user_id: @user.id).first
         if ug
-          if ug.user_id==@user.id
+          if ug.group.user_id==@user.id
             puts "mismo usuario"
             ug.group.delete
           else
