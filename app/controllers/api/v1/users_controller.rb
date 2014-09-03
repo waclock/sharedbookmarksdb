@@ -49,13 +49,16 @@ module Api
         respond_with b
       end
       def delete_group
-        g=Group.where(id: params[:id],user_id: @user.id).first
-        if g
-          puts "Encontre grupo"
-          g.delete
+        ug=@user.user_groups.find_by_group_id(params[:id])
+        # g=Group.where(id: params[:id],user_id: @user.id).first
+        if ug
+          if ug.user_id==@user.id
+            ug.group.delete
+          else
+            ug.delete
+          end
           return render text:"Success"
         else
-          puts "No encontre grupo"
           return render text:"Ha ocurrido un error borrando el grupo"
         end
       end
