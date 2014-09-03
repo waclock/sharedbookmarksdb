@@ -53,8 +53,10 @@ module Api
         # g=Group.where(id: params[:id],user_id: @user.id).first
         if ug
           if ug.user_id==@user.id
+            puts "mismo usuario"
             ug.group.delete
           else
+            puts "distinto usuario"
             ug.delete
           end
           return render text:"Success"
