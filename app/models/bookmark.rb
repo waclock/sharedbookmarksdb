@@ -4,7 +4,7 @@ class Bookmark < ActiveRecord::Base
 	belongs_to :user
 	before_save :check_link
 	def check_link
-		unless self.link[0..3]=="http"
+		unless self.link[0..3]=="http" || self.include? "chrome-extension://" 
 			self.link="http://"+self.link
 		end
 	end
